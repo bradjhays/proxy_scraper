@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  redis:
+    image: redislabs/redismod
+    ports:
+      - '6379:6379'
+
+  # redisinsight:
+  #   image: redislabs/redisinsight:latest
+  #   ports:
+  #     - '8001:8001'
+
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      REDIS_HOST: redis
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+
+
+  # worker_1:
+  #   build: .
+  #   command: /code/scripts/run_worker.sh
+  #   environment:
+  #     REDIS_HOST: redis
+  #     LOGLEVEL: INFO
+  #   volumes:
+  #     - .:/code
+  #   depends_on:
+  #     - redis
+  #   restart: always

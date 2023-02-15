@@ -1,0 +1,10 @@
+[
+    {
+        "type": "json",
+        "url": "https://proxylist.geonode.com/api/proxy-list?limit=20&page=1&sort_by=lastChecked&sort_type=desc&filterUpTime=90&speed=medium&protocols=http%2Chttps",
+        "container": "data",
+        "ip": "ip",
+        "port": "port",
+        "proto": "protocols"
+    }
+]

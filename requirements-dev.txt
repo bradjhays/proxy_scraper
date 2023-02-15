@@ -1,0 +1,10 @@
+black
+coverage
+parameterized
+pylint
+pytest
+pytest-cov
+pytest-html
+pytest_redis
+vcrpy
+vulture
